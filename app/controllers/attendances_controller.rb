@@ -1,5 +1,9 @@
 class AttendancesController < ApplicationController
   def index
-    @attendance = Attendance.first
+    @attendances = Attendance.all
+  end
+
+  def show
+    @attendance = Attendance.find(params[:id])
   end
 end
