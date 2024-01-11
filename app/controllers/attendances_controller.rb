@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
   def index
-    @attendance = Attendance.first
+    @attendances = Attendance.all
   end
 end
