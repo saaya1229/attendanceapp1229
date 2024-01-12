@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'attendances#index'
 
-  resources :attendances, only: [:show, :new, :create]
+  resources :attendances, only: [:show, :new, :create, :edit]
 end

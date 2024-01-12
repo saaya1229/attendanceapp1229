@@ -21,6 +21,10 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def edit
+    @attendance = Attendance.find(params[:id])
+  end
+
   private
   def attendance_params
     params.require(:attendance).permit(
