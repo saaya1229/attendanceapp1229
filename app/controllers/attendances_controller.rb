@@ -21,6 +21,20 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def edit
+    @attendance = Attendance.find(params[:id])
+  end
+
+  def update
+    @attendance = Attendance.find(params[:id])
+    if @attendance.update(attendance_params)
+      redirect_to attendance_path(@attendance), notice: '更新しました'
+    else
+      flash.now[:error] = '更新に失敗しました'
+      render :edit
+    end
+  end
+
   private
   def attendance_params
     params.require(:attendance).permit(
