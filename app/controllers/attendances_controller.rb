@@ -6,4 +6,7 @@ class AttendancesController < ApplicationController
   def show
     @attendance = Attendance.find(params[:id])
   end
+
+  def new
+  end
 end
