@@ -1,4 +1,9 @@
 <div class="container">
+  <ul>
+    <% @attendance.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
   <%= form_with(model: @attendance, url: attendances_path, method: 'post', local: true) do |f| %>
     <div>
       <%= f.label :title, 'タイトル' %>
@@ -19,10 +24,10 @@
       <%= f.time_field :end_time, class: 'text' %>
     </div>
     <div>
-      <%= f.label :break_time, '休憩時間' %>
+      <%= f.label :break_time, '休憩時間(時間)' %>
     </div>
     <div>
-      <%= f.time_field :break_time, class: 'text' %>
+      <%= f.number_field :break_time, class: 'text' %>
     </div>
     <div>
       <%= f.label :content, '補足内容' %>

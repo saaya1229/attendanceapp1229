@@ -10,6 +10,12 @@ $avatar-size: 32px;
 
   &_title {
     font-size: 22px;
+    color: white;
+    background-color: $primary-color;
+  }
+
+  &_time {
+    padding: 12px 0;
   }
 
   &_detail {
