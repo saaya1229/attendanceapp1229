@@ -8,5 +8,6 @@ class AttendancesController < ApplicationController
   end
 
   def new
+    @attendance = Attendance.new
   end
 end
