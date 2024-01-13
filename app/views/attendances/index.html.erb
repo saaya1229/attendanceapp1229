@@ -11,18 +11,15 @@
   <% @attendances.each do |attendance| %>
     <%= link_to attendance_path(attendance) do %>
       <div class="card">
-        <div class="card_image">
-          <%= image_tag 'eyecatch1.png' %>
-        </div>
         <div class="card_content">
           <div class="card_title">
             <%= attendance.title %>
+            <p><%= attendance.created_at %></p>
           </div>
           <div class="card_detail">
             <%= image_tag 'default-avatar.png' %>
             <div>
               <p>cohki0305</p>
-              <p>2020/4/16</p>
             </div>
           </div>
         </div>

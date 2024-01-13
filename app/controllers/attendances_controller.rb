@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_attendance, only: [:show, :edit, :update]
   def index
     @attendances = Attendance.all
   end
@@ -51,7 +51,7 @@ class AttendancesController < ApplicationController
   end
 
 
-  def set_article
-    @article = Article.find(params[:id])
+  def set_attendance
+    @attendance = Attendance.find(params[:id])
   end
 end
