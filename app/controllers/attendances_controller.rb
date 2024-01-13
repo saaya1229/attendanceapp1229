@@ -35,6 +35,12 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def destroy
+    attendance = Attendance.find(params[:id])
+    attendance.destroy!
+    redirect_to root_path, notice: '削除しました'
+  end
+
   private
   def attendance_params
     params.require(:attendance).permit(
