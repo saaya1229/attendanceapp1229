@@ -1,0 +1,29 @@
+.attendance
+  %h1.attendance_title= @attendance.title
+  .attendance_detail
+    = image_tag 'default-avatar.png'
+    %div
+      %p cohki0305
+      %p= @attendance.display_created_at
+    .attendance_detail_actions
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to'編集する', edit_attendance_path(@attendance)
+          = link_to'削除する', attendance_path(@attendance), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  .attendance_start_time
+    .attendance_title
+      %p 出勤時間
+    .attendance_time= @attendance.start_time
+  .attendance_end_time
+    .attendance_title
+      %p 退勤時間
+    .attendance_time= @attendance.end_time
+  .attendance_break_time
+    .attendance_title
+      %p 休憩時間
+    = @attendance.break_time
+  .attendance_content
+    .attendance_title
+      %p 補足コメント
+    = @attendance.content
