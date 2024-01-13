@@ -50,7 +50,6 @@ class AttendancesController < ApplicationController
     )
   end
 
-
   def set_attendance
     @attendance = Attendance.find(params[:id])
   end
