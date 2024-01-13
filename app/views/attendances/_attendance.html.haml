@@ -1,0 +1,10 @@
+= link_to attendance_path(attendance) do
+  .card
+    .card_content
+      .card_title
+        = attendance.title
+        %p= attendance.display_created_at
+      .card_detail
+        = image_tag 'default-avatar.png'
+        %div
+          %p cohki0305
