@@ -23,6 +23,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :attendances, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   def has_written?(attendance)
     attendances.exists?(id: attendance.id)
