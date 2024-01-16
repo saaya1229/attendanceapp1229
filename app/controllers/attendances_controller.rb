@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-  before_action :set_attendance, only: [:show, :edit, :update]
+  before_action :set_attendance, only: [:show]
   before_action :authenticate_user!
   def index
     @attendances = Attendance.all
@@ -9,11 +9,11 @@ class AttendancesController < ApplicationController
   end
 
   def new
-    @attendance = Attendance.new
+    @attendance = current_user.attendances.build
   end
 
   def create
-    @attendance = Attendance.new(attendance_params)
+    @attendance = current_user.attendances.build(attendance_params)
     if @attendance.save
       redirect_to attendance_path(@attendance), notice: '保存しました'
     else
@@ -23,9 +23,11 @@ class AttendancesController < ApplicationController
   end
 
   def edit
+    @attendance = current_user.attendances.find(params[:id])
   end
 
   def update
+    @attendance = current_user.attendances.find(params[:id])
     if @attendance.update(attendance_params)
       redirect_to attendance_path(@attendance), notice: '更新しました'
     else
@@ -35,7 +37,7 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    attendance = Attendance.find(params[:id])
+    attendance = current_user.attendances.find(params[:id])
     attendance.destroy!
     redirect_to root_path, notice: '削除しました'
   end
@@ -43,7 +45,6 @@ class AttendancesController < ApplicationController
   private
   def attendance_params
     params.require(:attendance).permit(
-      :title,
       :start_time,
       :end_time,
       :break_time,

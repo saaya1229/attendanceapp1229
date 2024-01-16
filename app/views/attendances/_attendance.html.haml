@@ -2,9 +2,9 @@
   .card
     .card_content
       .card_title
-        = attendance.title
+        %p 出退勤日入力日
         %p= attendance.display_created_at
       .card_detail
         = image_tag 'default-avatar.png'
         %div
-          %p cohki0305
+          %p= attendance.author_name
