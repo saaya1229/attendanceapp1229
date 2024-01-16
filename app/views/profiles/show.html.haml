@@ -8,3 +8,7 @@
           = current_user.display_name
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
+
+
+  - current_user.attendances.each do |attendance|
+    = render 'commons/attendance', attendance: attendance
