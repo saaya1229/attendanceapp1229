@@ -9,11 +9,11 @@ class AttendancesController < ApplicationController
   end
 
   def new
-    @attendance = Attendance.new
+    @attendance = current_user.attendances.build
   end
 
   def create
-    @attendance = Attendance.new(attendance_params)
+    @attendance = current_user.attendances.build(attendance_params)
     if @attendance.save
       redirect_to attendance_path(@attendance), notice: '保存しました'
     else
