@@ -37,7 +37,7 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    attendance = Attendance.find(params[:id])
+    attendance = current_user.attendances.find(params[:id])
     attendance.destroy!
     redirect_to root_path, notice: '削除しました'
   end
