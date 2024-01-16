@@ -7,4 +7,5 @@
       .card_detail
         = image_tag 'default-avatar.png'
         %div
-          %p cohki0305
+          - if attendance.user.present?
+            %p= attendance.user.display_name

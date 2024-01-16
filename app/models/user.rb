@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def has_written?(attendance)
     attendances.exists?(id: attendance.id)
   end
+
+  def display_name
+    self.email.split('@').first
+  end
 end
