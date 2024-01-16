@@ -1,6 +1,6 @@
 .attendance
   .attendance_detail
-    = image_tag 'default-avatar.png'
+    = image_tag @attendance.user.avatar_image
     %div
       %p= @attendance.author_name
       %p= @attendance.display_created_at
