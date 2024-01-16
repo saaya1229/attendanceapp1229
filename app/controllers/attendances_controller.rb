@@ -1,5 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update]
+  before_action :authenticate_user!
   def index
     @attendances = Attendance.all
   end
