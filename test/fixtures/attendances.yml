@@ -6,11 +6,10 @@
 #  break_time :integer
 #  content    :text
 #  end_time   :datetime
-#  start_time :datetime
-#  title      :string
+#  start_time :datetime         not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
+#  user_id    :integer          not null
 #
 # Indexes
 #

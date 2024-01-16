@@ -45,7 +45,6 @@ class AttendancesController < ApplicationController
   private
   def attendance_params
     params.require(:attendance).permit(
-      :title,
       :start_time,
       :end_time,
       :break_time,
