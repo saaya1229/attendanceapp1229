@@ -48,7 +48,8 @@ class AttendancesController < ApplicationController
       :start_time,
       :end_time,
       :break_time,
-      :content
+      :content,
+      :eyecatch
     )
   end
 

@@ -16,6 +16,8 @@
 #  index_attendances_on_user_id  (user_id)
 #
 class Attendance < ApplicationRecord
+  has_one_attached :eyecatch
+
   validates :start_time, presence: true
 
   belongs_to :user

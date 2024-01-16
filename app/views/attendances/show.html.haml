@@ -27,3 +27,9 @@
     .attendance_title
       %p 補足コメント
     = @attendance.content
+  .attendance_photo
+    .attendance_title
+      %p 写真
+      - if @attendance.eyecatch.attached?
+        .attendance_image
+          = image_tag @attendance.eyecatch
