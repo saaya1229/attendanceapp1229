@@ -9,6 +9,8 @@
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
 
-
+  .tabs
+    .tabs_item.active
+      私の出退勤日一覧
   - current_user.attendances.each do |attendance|
     = render 'commons/attendance', attendance: attendance
