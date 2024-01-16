@@ -1,5 +1,5 @@
 class AttendancesController < ApplicationController
-  before_action :set_attendance, only: [:show, :edit, :update]
+  before_action :set_attendance, only: [:show]
   before_action :authenticate_user!
   def index
     @attendances = Attendance.all
@@ -23,9 +23,11 @@ class AttendancesController < ApplicationController
   end
 
   def edit
+    @attendance = current_user.attendances.find(params[:id])
   end
 
   def update
+    @attendance = current_user.attendances.find(params[:id])
     if @attendance.update(attendance_params)
       redirect_to attendance_path(@attendance), notice: '更新しました'
     else
