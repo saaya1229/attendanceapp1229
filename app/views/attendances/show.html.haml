@@ -2,8 +2,7 @@
   .attendance_detail
     = image_tag 'default-avatar.png'
     %div
-      - if @attendance.user.present?
-        %p= @attendance.user.display_name
+      %p= @attendance.author_name
       %p= @attendance.display_created_at
     - if user_signed_in? && current_user.has_written?(@attendance)
       .attendance_detail_actions

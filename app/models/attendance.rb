@@ -31,4 +31,8 @@ class Attendance < ApplicationRecord
   def display_end_time
     I18n.l(self.end_time, format: :long)
   end
+
+  def author_name
+    user.display_name
+  end
 end
