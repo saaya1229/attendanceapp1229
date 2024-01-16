@@ -1,6 +1,6 @@
 .attendance
   .attendance_detail
-    = image_tag 'default-avatar.png'
+    = image_tag @attendance.user.avatar_image
     %div
       %p= @attendance.author_name
       %p= @attendance.display_created_at
@@ -22,7 +22,7 @@
   .attendance_break_time
     .attendance_title
       %p 休憩時間
-    = @attendance.break_time
+    = "#{@attendance.display_break_time}時間"
   .attendance_content
     .attendance_title
       %p 補足コメント

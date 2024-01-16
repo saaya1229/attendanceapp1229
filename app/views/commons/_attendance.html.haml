@@ -5,6 +5,6 @@
         %p 出退勤日入力日
         %p= attendance.display_created_at
       .card_detail
-        = image_tag 'default-avatar.png'
+        = image_tag attendance.user.avatar_image
         %div
           %p= attendance.author_name

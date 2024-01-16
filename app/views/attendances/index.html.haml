@@ -1,7 +1,7 @@
 .container
   = render 'tabs'
   - @attendances.each do |attendance|
-    = render 'attendance', attendance: attendance
+    = render 'commons/attendance', attendance: attendance
   = link_to new_attendance_path do
     .float_btn
       %p 出退勤を入力する
