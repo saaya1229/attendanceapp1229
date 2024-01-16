@@ -5,12 +5,13 @@
     %div
       %p cohki0305
       %p= @attendance.display_created_at
-    .attendance_detail_actions
-      .dropdown
-        = image_tag 'actions.svg', class: 'dropbtn'
-        .dropdown-content.mini
-          = link_to'編集する', edit_attendance_path(@attendance)
-          = link_to'削除する', attendance_path(@attendance), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+    - if user_signed_in? && current_user.has_written?(@attendance)
+      .attendance_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to'編集する', edit_attendance_path(@attendance)
+            = link_to'削除する', attendance_path(@attendance), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .attendance_start_time
     .attendance_title
       %p 出勤時間
