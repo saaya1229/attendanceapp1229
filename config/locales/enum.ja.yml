@@ -4,3 +4,4 @@ ja:
       teacher: '講師'
       officeworker: '事務職員'
       parttime: 'アルバイト'
+      unknown: '職種未入力'
