@@ -31,6 +31,7 @@ class Attendance < ApplicationRecord
   end
 
   def display_end_time
+    return '----/--/-- --:--' unless end_time.present?
     I18n.l(self.end_time, format: :long)
   end
 
