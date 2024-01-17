@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2024_01_16_074814) do
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "nickname"
-    t.integer "gender"
+    t.integer "job"
     t.date "birthday"
     t.boolean "subscribed", default: false
     t.datetime "created_at", precision: 6, null: false
