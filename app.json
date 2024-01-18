@@ -1,0 +1,16 @@
+{
+  "name": "attendance app",
+  "description": "This is attendanceapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/saaya1229/attendanceapp1229",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }]
+}
