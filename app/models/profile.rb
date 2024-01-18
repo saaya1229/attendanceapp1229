@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  birthday   :date
-#  gender     :integer
+#  job        :integer
 #  nickname   :string
 #  subscribed :boolean          default(FALSE)
 #  created_at :datetime         not null
@@ -16,7 +16,7 @@
 #  index_profiles_on_user_id  (user_id)
 #
 class Profile < ApplicationRecord
-  enum gender: { male: 0, female: 1, other: 2 }
+  enum job: { teacher: 0, officeworker: 1, parttime: 2 }
   belongs_to :user
   has_one_attached :avatar
 

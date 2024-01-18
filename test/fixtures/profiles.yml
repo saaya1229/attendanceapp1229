@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  birthday   :date
-#  gender     :integer
+#  job        :integer
 #  nickname   :string
 #  subscribed :boolean          default(FALSE)
 #  created_at :datetime         not null

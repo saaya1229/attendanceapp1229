@@ -16,6 +16,8 @@
 #  index_attendances_on_user_id  (user_id)
 #
 class Attendance < ApplicationRecord
+  has_one_attached :eyecatch
+
   validates :start_time, presence: true
 
   belongs_to :user
@@ -29,6 +31,7 @@ class Attendance < ApplicationRecord
   end
 
   def display_end_time
+    return '----/--/-- --:--' unless end_time.present?
     I18n.l(self.end_time, format: :long)
   end
 

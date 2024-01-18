@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
 
-  delegate :birthday, :age, :gender, to: :profile, allow_nil: true
+  delegate :birthday, :age, :job, to: :profile, allow_nil: true
 
   def has_written?(attendance)
     attendances.exists?(id: attendance.id)
