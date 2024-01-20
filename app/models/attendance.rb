@@ -35,10 +35,6 @@ class Attendance < ApplicationRecord
     I18n.l(self.end_time, format: :long)
   end
 
-  def display_break_time
-    return '0' unless break_time.present?
-  end
-
   def author_name
     user.display_name
   end
